@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["hyprland/workspaces","custom/media"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio","hyprland/language","battery", "clock"],
+    "modules-right": ["pulseaudio","hyprland/language","battery", "tray","clock"],
 
     "hyprland/window": {
         "max-length": 25,
@@ -54,5 +54,9 @@
         "scroll-step": 1,
         "on-click": "pavucontrol",
         "ignored-sinks": ["Easy Effects Sink"]
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
     }
 }
