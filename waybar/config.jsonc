@@ -1,0 +1,58 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces","custom/media"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio","hyprland/language","battery", "clock"],
+
+    "hyprland/window": {
+        "max-length": 25,
+        "format": "{initialTitle}",
+        "rewrite": {
+            "Mozilla Firefox": "🌎",
+            "Alacritty": "Terminal"
+        },
+    },
+    "hyprland/language": {
+        "format": " 󰌌  {} ",
+        "format-en": "US",
+        "format-tr": "TR",
+        "keyboard-name": "at-translated-set-2-keyboard"
+    },
+    "battery": {
+        "format": " {icon}  {capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}",
+        
+    },
+    "custom/media": {
+        "format": " {icon} {} ",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "pulseaudio": {
+        "format": " {icon} {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    }
+}
